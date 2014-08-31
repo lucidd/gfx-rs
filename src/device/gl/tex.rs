@@ -52,6 +52,9 @@ fn format_to_gl(t: tex::Format) -> Result<GLenum, ()> {
         tex::Integer(_, _, _) => unimplemented!(),
         // unsigned integer
         tex::Unsigned(tex::RGBA, 8, attrib::IntNormalized) => gl::RGBA8,
+        tex::Unsigned(tex::R, 8, attrib::IntNormalized) => gl::R8,
+        tex::Unsigned(tex::RG, 8, attrib::IntNormalized) => gl::RG8,
+        tex::Unsigned(tex::RGB, 8, attrib::IntNormalized) => gl::RGB8,
         tex::Unsigned(_, _, _) => unimplemented!(),
         // special
         tex::R3G3B2       => gl::R3_G3_B2,
